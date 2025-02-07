@@ -67,17 +67,15 @@ if yes_clicked:
     st.balloons()
     st.success("Yay! I knew you'd say yes! 🎉💖 Can't wait for our special day! 😍")
     time.sleep(2)
-    st.markdown("<h2 style='color: red;'>🎆Yayyyyy you my Valentine! 🎆</h2>", unsafe_allow_html=True)
-    st.image("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXc4enBmdzd1ZTFiNDYxbGw4ejN6ZnV1NTBqNDVrb3NuaXJzdzhtdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LTcau7EnQLhHkxxG2u/giphy.gif", use_container_width=True)
+    st.markdown("<h2 style='color: red;'>🎆 Yayyyyy you are my Valentine! 🎆</h2>", unsafe_allow_html=True)
+    st.image("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXc4enBmdzd1ZTFiNDYxbGw4ejN6ZnV1NTBqNDVrb3NuaXJzdzhtdSZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/LTcau7EnQLhHkxxG2u/giphy.gif", use_container_width=True)
+
 elif no_clicked:
     st.session_state.no_count += 1
     if st.session_state.no_count < len(no_responses) - 1:
         st.session_state.gif_index = (st.session_state.gif_index + 1) % len(gif_list)  # Rotate GIFs
     if st.session_state.no_count == 3:
         st.session_state.hidden_button = True  # Show secret button after 3 rejections
-
-# Love Meter Progress Bar
-st.progress(st.session_state.no_count / len(no_responses))
 
 # Display progressive text based on "No" clicks
 if st.session_state.no_count > 0:
@@ -106,7 +104,7 @@ if st.session_state.hidden_button:
 if st.session_state.no_count >= len(no_responses) - 1:
     st.image(
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq6Gof65yYHfeDkedkm_Fbg033Hy-qgGrn2A&s",
-        caption="You have no choice, YOU are Valentine 😼🔪",
+        caption="You have no choice, YOU are my Valentine 😼🔪",
         use_container_width=True
     )
     st.button("Yes! ❤️", key="final_yes_button")  # Unique key to prevent duplication errors
